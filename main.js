@@ -51,3 +51,10 @@ function renderNotesDOM(notes, filters) {
     });
   }
 }
+
+document
+  .querySelector('#note-filter-input')
+  .addEventListener('input', function (e) {
+    filters.text = e.target.value;
+    console.log(e.target.value);
+  });
