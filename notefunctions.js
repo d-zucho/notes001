@@ -21,7 +21,10 @@ function displayNote(filteredNotes) {
     deleteButton.textContent = ' x ';
     deleteButton.setAttribute('class', 'deleteButton');
     deleteButton.addEventListener('click', function (e) {
-      console.log('delete button pressed');
+      removeNote(note.id);
+      saveNotes(notes);
+      document.querySelector('.notes').innerHTML = '';
+      renderNotesDOM(notes, filters);
     });
 
     let noteContainer = document.createElement('div');
@@ -50,8 +53,13 @@ function saveNotes(notes) {
   localStorage.setItem('notes', JSON.stringify(notes));
 }
 
-function findNote(id) {
-  notes.findIndex(function (note) {
+// match id and delete matching note
+function removeNote(id) {
+  const noteIndex = notes.findIndex(function (note) {
     return note.id === id;
   });
+
+  if (noteIndex > -1) {
+    notes.splice(noteIndex, 1);
+  }
 }
