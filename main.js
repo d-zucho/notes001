@@ -32,14 +32,14 @@ function renderNotesDOM(notes, filters) {
   displayNote(filteredNotes);
 }
 
-renderNotesDOM(notes, filters);
-
 // assign filter input to filters text
 document
   .querySelector('#note-filter-input')
   .addEventListener('input', function (e) {
     filters.text = e.target.value;
     console.log(e.target.value);
+    document.querySelector('.notes').innerHTML = '';
+    renderNotesDOM(notes, filters);
   });
 
 // add new note
@@ -53,3 +53,5 @@ document
     document.querySelector('.notes').innerHTML = '';
     renderNotesDOM(notes, filters);
   });
+
+renderNotesDOM(notes, filters);
