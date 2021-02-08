@@ -19,7 +19,10 @@ function displayNote(filteredNotes) {
 
     let deleteButton = document.createElement('button');
     deleteButton.textContent = ' x ';
-    editButton.setAttribute('class', 'deleteButton');
+    deleteButton.setAttribute('class', 'deleteButton');
+    deleteButton.addEventListener('click', function (e) {
+      console.log('delete button pressed');
+    });
 
     let noteContainer = document.createElement('div');
     noteContainer.setAttribute('class', 'noteComponent');
@@ -45,4 +48,10 @@ function addNote() {
 // save notes
 function saveNotes(notes) {
   localStorage.setItem('notes', JSON.stringify(notes));
+}
+
+function findNote(id) {
+  notes.findIndex(function (note) {
+    return note.id === id;
+  });
 }
