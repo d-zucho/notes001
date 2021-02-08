@@ -44,11 +44,12 @@ document
 
 // add new note
 document
-  .querySelector('.add-note-form')
+  .querySelector('#add-note-form')
   .addEventListener('submit', function (e) {
     e.preventDefault();
     addNote();
     saveNotes(notes);
+    document.querySelector('#add-note-input').value = '';
     document.querySelector('.notes').innerHTML = '';
     renderNotesDOM(notes, filters);
   });
