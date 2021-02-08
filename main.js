@@ -20,9 +20,7 @@ let filters = {
 
 let notesJSON = localStorage.getItem('notes');
 
-if (notesJSON !== null) {
-  notes = JSON.parse(notesJSON);
-}
+checkStorage();
 
 // main render focus
 function renderNotesDOM(notes, filters) {
