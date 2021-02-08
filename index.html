@@ -21,9 +21,11 @@
         <div class="new-note-container">
 
           <div class="add-note-container">
-            <label for="add-note-input">Add New Note: </label>
-            <input type="text" id="add-note-input" placeholder="Note Title">
-            <button class="submit-button"> Submit </button>
+            <form id="add-note-form">
+              <label for="add-note-input">Add New Note: </label>
+              <input type="text" id="add-note-input" placeholder="Note Title">
+              <button class="submit-button" type="submit"> Submit </button>
+            </form>
           </div>
 
           <div class="note-filter-container">
@@ -42,7 +44,7 @@
 
   
 
-  <script src="http://wzrd.in/standalone/uuid%2Fv4@latest"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
   <script src="notefunctions.js"></script>
   <script src="main.js"></script>
 </body>

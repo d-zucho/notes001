@@ -44,8 +44,9 @@ document
 
 // add new note
 document
-  .querySelector('.submit-button')
-  .addEventListener('click', function (e) {
+  .querySelector('.add-note-form')
+  .addEventListener('submit', function (e) {
+    e.preventDefault();
     addNote();
     saveNotes(notes);
     document.querySelector('.notes').innerHTML = '';
