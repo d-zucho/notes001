@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+}
+
+/* -- Header --  */
+
+header {
+  width: 100%;
+}
+
+.header-container {
+  height: 5rem;
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.header-title {
+  font-size: 50px;
+  line-height: 0.6;
+  letter-spacing: -0.045em;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: black;
+  margin-right: 10px;
+}
+
+.nav4 {
+}

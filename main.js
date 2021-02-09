@@ -37,7 +37,7 @@ document
   .querySelector('#note-filter-input')
   .addEventListener('input', function (e) {
     filters.text = e.target.value;
-    console.log(e.target.value);
+    // console.log(e.target.value);
     document.querySelector('.notes').innerHTML = '';
     renderNotesDOM(notes, filters);
   });
