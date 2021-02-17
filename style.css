@@ -2,6 +2,10 @@
   margin: 0;
 }
 
+body {
+  min-width: 800px;
+}
+
 /* -- Header --  */
 
 header {
@@ -33,4 +37,25 @@ header {
 
 .nav4 {
   margin: 0;
+}
+
+hr {
+  opacity: 0.2;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.new-note-container {
+  margin: 4rem 0;
+  display: flex;
+  justify-content: space-around;
 }
