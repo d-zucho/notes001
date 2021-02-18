@@ -50,6 +50,7 @@ function addNote() {
     id: id,
   });
   location.assign(`./editNote.html#${id}`);
+  // createEditHeader(noteInput);
 }
 
 // save notes
@@ -67,3 +68,9 @@ function removeNote(id) {
     notes.splice(noteIndex, 1);
   }
 }
+
+// function createEditHeader(noteInput) {
+//   const editTitle = document.createElement('h1');
+//   editTitle.textContent = noteInput;
+//   document.querySelector('.editHeader').append(editTitle);
+// }
