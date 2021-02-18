@@ -12,7 +12,7 @@ function displayNote(filteredNotes) {
     let noteTitle = document.createElement('a');
     noteTitle.textContent = '  - ' + note.title;
     noteTitle.setAttribute('class', 'noteSpan');
-    noteTitle.setAttribute('href', `./editNote.html#${note.id}`);
+    noteTitle.setAttribute('href', `./editNotesItems/editNote.html#${note.id}`);
     let editButton = document.createElement('button');
     editButton.textContent = ' Edit ';
     editButton.setAttribute('class', 'editButton');
@@ -49,8 +49,7 @@ function addNote() {
     body: '',
     id: id,
   });
-  location.assign(`./editNote.html#${id}`);
-  // createEditHeader(noteInput);
+  location.assign(`./editNotesItems/editNote.html#${id}`);
 }
 
 // save notes
@@ -68,9 +67,3 @@ function removeNote(id) {
     notes.splice(noteIndex, 1);
   }
 }
-
-// function createEditHeader(noteInput) {
-//   const editTitle = document.createElement('h1');
-//   editTitle.textContent = noteInput;
-//   document.querySelector('.editHeader').append(editTitle);
-// }
