@@ -12,7 +12,7 @@ function displayNote(filteredNotes) {
     let noteTitle = document.createElement('a');
     noteTitle.textContent = '  - ' + note.title;
     noteTitle.setAttribute('class', 'noteSpan');
-    noteTitle.setAttribute('href', './editNote.html');
+    noteTitle.setAttribute('href', `./editNote.html#${note.id}`);
     let editButton = document.createElement('button');
     editButton.textContent = ' Edit ';
     editButton.setAttribute('class', 'editButton');
@@ -20,6 +20,8 @@ function displayNote(filteredNotes) {
     let deleteButton = document.createElement('button');
     deleteButton.textContent = ' x ';
     deleteButton.setAttribute('class', 'deleteButton');
+
+    // delete button event listener
     deleteButton.addEventListener('click', function (e) {
       removeNote(note.id);
       saveNotes(notes);
@@ -27,9 +29,9 @@ function displayNote(filteredNotes) {
       renderNotesDOM(notes, filters);
     });
 
+    // append elements together and to page
     let noteContainer = document.createElement('div');
     noteContainer.setAttribute('class', 'noteComponent');
-
     noteContainer.appendChild(noteTitle);
     noteContainer.appendChild(editButton);
     noteContainer.appendChild(deleteButton);
@@ -41,11 +43,13 @@ function displayNote(filteredNotes) {
 // add new note
 function addNote() {
   let noteInput = document.querySelector('#add-note-input').value;
+  const id = uuidv4();
   notes.push({
     title: noteInput,
     body: '',
-    id: uuidv4(),
+    id: id,
   });
+  location.assign(`./editNote.html#${id}`);
 }
 
 // save notes

@@ -35,7 +35,6 @@ document
     e.preventDefault();
     addNote();
     saveNotes(notes);
-    location.assign('./editNote.html');
   });
 
 renderNotesDOM(notes, filters);
