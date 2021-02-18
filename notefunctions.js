@@ -9,10 +9,10 @@ function checkStorage() {
 function displayNote(filteredNotes) {
   // create note objects and add to DOM
   filteredNotes.forEach((note) => {
-    let noteTitle = document.createElement('span');
+    let noteTitle = document.createElement('a');
     noteTitle.textContent = '  - ' + note.title;
     noteTitle.setAttribute('class', 'noteSpan');
-
+    noteTitle.setAttribute('href', './editNote.html');
     let editButton = document.createElement('button');
     editButton.textContent = ' Edit ';
     editButton.setAttribute('class', 'editButton');
