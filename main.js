@@ -1,12 +1,9 @@
-let notes = [];
+let notesJSON = localStorage.getItem('notes');
+let notes = checkStorage();
 
 let filters = {
   text: '',
 };
-
-let notesJSON = localStorage.getItem('notes');
-
-checkStorage();
 
 // main render focus
 function renderNotesDOM(notes, filters) {

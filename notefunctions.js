@@ -1,7 +1,9 @@
 // check if any notes exist in storage
 function checkStorage() {
   if (notesJSON !== null) {
-    notes = JSON.parse(notesJSON);
+    return JSON.parse(notesJSON);
+  } else {
+    return [];
   }
 }
 
@@ -17,6 +19,7 @@ function displayNote(filteredNotes) {
     editButton.textContent = ' Edit ';
     editButton.setAttribute('class', 'editButton');
 
+    // create delete button
     let deleteButton = document.createElement('button');
     deleteButton.textContent = ' x ';
     deleteButton.setAttribute('class', 'deleteButton');
