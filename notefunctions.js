@@ -51,9 +51,13 @@ function addNote() {
     title: noteInput,
     body: '',
     id: id,
+    date: timestamp,
   });
   location.assign(`./editNotesItems/editNote.html#${id}`);
 }
+
+const now = new Date();
+const timestamp = now.getTime();
 
 // save notes
 function saveNotes(notes) {

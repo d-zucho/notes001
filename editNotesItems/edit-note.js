@@ -27,3 +27,11 @@ document.querySelector('.edit-form').addEventListener('submit', function (e) {
   saveNotes(notes);
   location.assign('../index.html');
 });
+
+console.log(note.date);
+
+let dateDisplay = document.createElement('h6');
+const convertTimestamp = new Date(timestamp);
+dateDisplay.textContent = `Date: ${convertTimestamp.toLocaleDateString()}`;
+
+document.querySelector('.noteDate').appendChild(dateDisplay);
