@@ -74,3 +74,29 @@ function removeNote(id) {
     notes.splice(noteIndex, 1);
   }
 }
+
+function sortNotes(notes, value) {
+  if (value === 'alphabetical') {
+    return notes.sort(function (a, b) {
+      if (a.title.toLowerCase() < b.title.toLowerCase()) {
+        return -1;
+      } else if (b.title.toLowerCase() < a.title.toLowerCase()) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  } else if (value === 'date') {
+    return notes.sort(function (a, b) {
+      if (a.date > b.date) {
+        return -1;
+      } else if (b.date > a.date) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
+  } else {
+    return notes;
+  }
+}

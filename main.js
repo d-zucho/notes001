@@ -3,10 +3,12 @@ let notes = checkStorage();
 
 let filters = {
   text: '',
+  sortBy: 'date',
 };
 
 // main render focus
 function renderNotesDOM(notes, filters) {
+  sortNotes(notes, filters.sortBy);
   let filteredNotes = notes.filter(function (note) {
     return note.title.toLowerCase().includes(filters.text.toLowerCase());
   });
@@ -34,4 +36,18 @@ document
     saveNotes(notes);
   });
 
+document.querySelector('#sortBy').addEventListener('change', function (e) {
+  filters.sortBy = e.target.value;
+  document.querySelector('.notes').innerHTML = '';
+  renderNotesDOM(notes, filters);
+});
+
+// document.querySelector(window).addEventListener('reload', function (e) {
+//   document.querySelector('#sortBy').value = 'date';
+// });
+
 renderNotesDOM(notes, filters);
+
+// document.addEventListener('load', function (e) {
+//   document.querySelector('#sortBy').value = 'date';
+// });
