@@ -5,7 +5,7 @@ let filters = {
   text: '',
   sortBy: 'date',
 };
-
+//
 // main render focus
 function renderNotesDOM(notes, filters) {
   sortNotes(notes, filters.sortBy);
